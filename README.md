@@ -1,10 +1,12 @@
 
-CREDIT CARD PROCESSING
+**CREDIT CARD PROCESSING**
 
 Spring Boot REST API to add new credit card accounts and list them all.
 
-Steps to Setup
+**Steps to Setup**
 1. Clone the application
+
+https://github.com/neelusharma80/cardServiceRestAPI.git
 
 2. Change inmemory HS2 Database username and password as per your installation
 
