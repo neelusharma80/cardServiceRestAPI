@@ -1,10 +1,10 @@
 
-**CREDIT CARD PROCESSING**
+# CREDIT CARD PROCESSING
 
 
 Spring Boot REST API to add new credit card accounts and list them all.
 
-**Steps to Setup**
+ **Steps to Setup**
 
 1. Clone the application
 
@@ -30,11 +30,12 @@ Spring Boot REST API to add new credit card accounts and list them all.
 4. If you wat you can validate HS2 database creation
 
      http://localhost:8080/h2
+     
 
 5.Explore Rest APIs
    The app defines following APIs
 
-   GET /api/v1/listCards
+         GET /api/v1/listCards
 
-   POST /api/v1/addCard
+         POST /api/v1/addCard
 
