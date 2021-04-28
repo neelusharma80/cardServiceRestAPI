@@ -30,7 +30,7 @@ public class CardRestController {
     }
 
     @PostMapping("/api/v1/addCard")
-    public ResponseEntity<Creditcard> addCard(@RequestBody Creditcard creditCard) throws Throwable {
+    public ResponseEntity<Creditcard> addCard(@RequestBody Creditcard creditCard) {
         cardService.save(creditCard);
         return new ResponseEntity<>(creditCard, HttpStatus.CREATED);
     }

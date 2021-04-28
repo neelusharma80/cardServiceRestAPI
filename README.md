@@ -1,35 +1,36 @@
+# Crediit Card Rest Service
 
-CREDIT CARD PROCESSING
 
-Spring Boot REST API to add new credit card accounts and list them all.
+## Install and run the project
+1. download/clone the project
 
-Steps to Setup
-1. Clone the application
+   git clone https://github.com/neelusharma80/cardServiceRestAPI.git
 
-2. Change inmemory HS2 Database username and password as per your installation
 
-open src/main/resources/application.properties
+2. Build the project using following maven command from project root folder
+* gradlew clean build
 
-change spring.datasource.username and spring.datasource.password as per your installation
- 
-3. Build and run the app using gradle
+3. Create docker image from following command
+* docker build -t cardservice .
 
-gradlew clean build
+4. Run Docker Container
+* docker run -p 8080:8080 -t cardservice
 
-If you want to run test separately
-gradlew test
+5. Test the endpoint
+* curl -i --user pubsap:pubsap1 http://localhost:8080/api/v1/listCards
 
-gradlew bootrun
+6. Stop Docker Container:
+* docker stop  docker container ls | grep "cardservice"
 
-The app will start running at http://localhost:8080.
-4. If you wat you can validate HS2 database creation
+7. Docker compose can be used as well : Run the docker-compose using the following command
+* docker-compose up -d
 
-http://localhost:8080/h2/l
+8. Stop Docker Container:
+* docker-compose down
 
-6.Explore Rest APIs
+
 The app defines following APIs
 
 GET /api/v1/listCards
 
 POST /api/v1/addCard
-
