@@ -2,6 +2,8 @@ package com.pubsap.cardService.validation;
 
 import org.springframework.stereotype.Component;
 
+import java.util.stream.Stream;
+
 @Component
 public class CardValidation {
 
@@ -15,14 +17,14 @@ public class CardValidation {
             return false;
         int cardLength = cardNumber.length();
         int sumOfDigits = 0;
-        boolean isTwoDigit = false;
+        boolean isAlternate = false;
         for (int i = cardLength - 1; i >= 0; i--) {
-            int d = cardNumber.charAt(i) - '0';
-            if (isTwoDigit == true)
+            int d = Character.getNumericValue(cardNumber.charAt(i));
+            if (isAlternate == true)
                 d = d * 2;
                 sumOfDigits += d / 10;
                 sumOfDigits += d % 10;
-                isTwoDigit = !isTwoDigit;
+                isAlternate = !isAlternate;
         }
         return (sumOfDigits % 10 == 0);
     }
